@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dappy"
+version = "0.1.2"
+description = "Synthetic data generation with SDV, run on a temporary Kaggle kernel"
+requires-python = ">=3.9"
+dependencies = ["kaggle", "pandas", "numpy"]
+
+[project.optional-dependencies]
+charts = ["matplotlib", "seaborn"]
+pretty = ["rich"]
+all = ["matplotlib", "seaborn", "rich"]
+
+[project.scripts]
+dappy = "dappy:main"
+
+[tool.setuptools]
+py-modules = ["dappy"]
